@@ -6,6 +6,10 @@ import com.example.examplemod.features.setting.Setting;
 public class SettingBoolean extends Setting {
     public boolean value;
 
+    public SettingBoolean(String name, Module module, boolean value) {
+        super();
+    }
+
     public void SettingBoolean(String name, Module mod, boolean value) {
         this.name = name;
         this.mod = mod;

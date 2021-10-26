@@ -80,13 +80,16 @@ public class Module {
         this.name = name;
     }
 
-    public void SettingBoolean(String name, boolean value) {
+    protected Minecraft mc = Minecraft.getMinecraft();
+
+    public SettingBoolean register(String name, boolean value) {
         SettingBoolean set = new SettingBoolean(name,this,value);
         Example.instance.settingManager.settings.add(set);
+        return set;
     }
 
     public SettingMode register(String name, ArrayList<String> value) {
-        SettingMode set = new SettingMode(name,this,values,value);
+        SettingMode set = new SettingMode(name,this,value);
         Example.instance.settingManager.settings.add(set);
         return set;
     }

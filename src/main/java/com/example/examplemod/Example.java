@@ -22,7 +22,7 @@ public class Example {
     public void init(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(instance);
 
-        moduleManager = new ModuleManager();
         settingManager = new SettingManager();
+        moduleManager = new ModuleManager();
     }
 }
