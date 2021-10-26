@@ -1,0 +1,16 @@
+[
+{
+  "modid": "example",
+  "name": "ExampleClient",
+  "description": "Example Client so i can learn.",
+  "version": "v1.0",
+  "mcversion": "{1.12.2}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": FaxHack,
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

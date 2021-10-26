@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.example.examplemod.mixin.mixins",
+  "refmap": "mixins.example.refmap.json",
+  "mixins": [
+    "MixinGuiMainMenu",
+    "MixinNetworkManager"
+
+  ]
+}
