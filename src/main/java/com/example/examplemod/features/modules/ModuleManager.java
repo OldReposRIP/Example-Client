@@ -1,8 +1,10 @@
 package com.example.examplemod.features.modules;
 
+import com.example.examplemod.features.modules.Client.ClickGuiModule;
 import com.example.examplemod.features.modules.Movement.Sprint;
 import com.example.examplemod.features.modules.Movement.*;
 import com.example.examplemod.features.modules.Render.FullBright;
+import com.example.examplemod.gui.clickgui.ClickGUI;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -26,6 +28,7 @@ public class ModuleManager {
         modules.add(new Step());
         modules.add(new Sprint());
         modules.add(new FullBright());
+        modules.add(new ClickGuiModule());
     }
 
     public ArrayList<Module> getModules() {

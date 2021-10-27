@@ -1,7 +1,9 @@
 package com.example.examplemod.gui.clickgui;
 
 
+import com.example.examplemod.Example;
 import com.example.examplemod.features.modules.Category;
+import com.example.examplemod.features.modules.Module;
 import net.minecraft.client.gui.GuiScreen;
 
 import java.io.IOException;
@@ -9,13 +11,18 @@ import java.util.ArrayList;
 
 public class ClickGUI extends GuiScreen {
 
-    public ArrayList<Frame> frame;
+    public ArrayList<Frame> frames;
 
     public ClickGUI() {
-        frame = new ArrayList<>();
+        int offset = 0;
+        frames = new ArrayList<>();
         for(Category c : Category.values()) {
-            Frame frame = new Frame(c.name(),100 + offset,20,100);
-            frame.add(frame);
+            Frame frame = new Frame(c.name(),100 + offset,20,100,12);
+            for(Module m : Example.instance.moduleManager.getModsInCategory(c)) {
+                Botton botton = new Botton(frame,m);
+                frame.bottons.add(botton);
+            }
+            frames.add(frame);
             offset += 150;
         }
     }
@@ -24,6 +31,7 @@ public class ClickGUI extends GuiScreen {
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         super.drawScreen(mouseX, mouseY, partialTicks);
         for(Frame f : frames) {
+            f.update(mouseX, mouseY);
             f.drawScreen(mouseX, mouseY, partialTicks);
         }
     }

@@ -1,7 +1,13 @@
+/*
+ * Credits to Forge for the example mod
+ */
+
+
 package com.example.examplemod;
 
 import com.example.examplemod.features.modules.ModuleManager;
 import com.example.examplemod.features.setting.settings.SettingManager;
+import com.example.examplemod.gui.clickgui.ClickGUI;
 import me.zero.alpine.EventManager;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,11 +24,15 @@ public class Example {
     public ModuleManager moduleManager;
     public SettingManager settingManager;
 
+    public ClickGUI clickGui;
+
     @Mod.EventHandler
     public void init(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(instance);
 
         settingManager = new SettingManager();
         moduleManager = new ModuleManager();
+
+        clickGui = new ClickGUI();
     }
 }
